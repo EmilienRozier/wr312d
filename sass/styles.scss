@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Quicksand:wght@500&family=Rubik:wght@600&display=swap');
 
+$primary-color: #18302B;
+
+@mixin font-style($font-family, $font-size, $font-weight) {
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+}
 * {
     padding: 0;
     margin: 0;
@@ -13,32 +20,27 @@
 
 h1 {
     width: 60%;
-    font-family: 'Playfair Display', serif;
     color: white;
-    font-size: 80px;
+    @include font-style('Playfair Display', 80px, 800)
 }
 
-@media screen and (max-width: 1090px){
+@media screen and (max-width: 1090px) {
     h1 {
         font-size: 60px;
     }
 }
 
 h2 {
-    font-family: 'Rubik', sans-serif;
-    font-size: 46px;
+    @include font-style('Rubik', 46px, 600);
     text-transform: uppercase;
 }
 
 h3 {
-    font-family: 'Rubik', sans-serif;
-    font-size: 40px;
+    @include font-style('Rubik', 40px, 600);
 }
 
-p{
-    font-family: 'Quicksand', sans-serif;
-    font-weight: normal;
-    font-size: 20px;
+p {
+    @include font-style('Quicksand', 20px, normal);
 }
 
 li {
@@ -64,6 +66,7 @@ header {
     background: white;
     display: flex;
     margin-top: 40px;
+    font-weight: 700;
 }
 
 .header-content__btn a {
@@ -102,13 +105,13 @@ header {
     width: 45%;
 }
 
-.main-content p{
+.main-content p {
     margin-top: 40px;
 }
 
 .industries {
     margin-top: 150px;
-    background-color: #18302B;
+    background-color: $primary-color;
 }
 
 .industries h2 {
@@ -117,7 +120,7 @@ header {
     color: white;
 }
 
-.industries ul{
+.industries ul {
     display: flex;
     justify-content: space-around;
     padding-bottom: 75px;
@@ -127,31 +130,34 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
-.industries ul li p{
+.industries ul li p {
     margin-top: 25px;
     color: white;
+    text-align: center;
 }
 
-.industries ul li svg{
+.industries ul li svg {
     width: 110px;
     height: 110px;
     border-radius: 100%;
     padding: 30px;
-    background-color: white;    
+    background-color: white;
 }
 
 @keyframes rotate {
     from {
-      transform: rotate(0turn);
+        transform: rotate(0turn);
     }
-    to {
-      transform: rotate(1turn);
-    }
-  }
 
-.industries ul li svg:hover{
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.industries ul li svg:hover {
     animation: 4s linear 0s infinite rotate;
 }
 
@@ -160,20 +166,22 @@ header {
     width: 75%;
 }
 
-.video img {
+.video iframe {
     width: 100%;
+    border-radius: 10px;
+    height: 60vh;
 }
 
-@media screen and (max-width: 986px){
+@media screen and (max-width: 986px) {
     h1 {
         font-size: 50px;
     }
 
     .main-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
     }
 
     .main-content div {
@@ -190,7 +198,7 @@ header {
         justify-content: initial;
     }
 
-    .industries ul li{
+    .industries ul li {
         margin-top: 25px;
     }
 
