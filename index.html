@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <link rel="stylesheet" href="./styles.css">
@@ -10,13 +10,22 @@
 
 <body>
     <header>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">industries</a></li>
+                <li><a href="">Portfolio</a></li>
+                <li><a href="">Compagny</a></li>
+            </ul>
+        </nav>
         <div id="header-content">
             <h1>We Produce the Legacy of Excellence</h1>
             <div class="header-content__btn"><a href="#">Contact us</a></div>
         </div>
     </header>
     <div id="mouse">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg onclick="scrollToElement('main')" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_203_223)">
                 <path
                     d="M16.3333 3.5H11.6667C9.08934 3.5 7 5.58934 7 8.16667V19.8333C7 22.4107 9.08934 24.5 11.6667 24.5H16.3333C18.9107 24.5 21 22.4107 21 19.8333V8.16667C21 5.58934 18.9107 3.5 16.3333 3.5Z"
@@ -34,12 +43,12 @@
 
 
     <main>
-        <div class="main">
+        <div class="main" id="main">
             <h2>about</h2>
             <div>
                 <div class="main-content">
                     <div>
-                        <img src="./images/img1.jpg" alt="">
+                        <img src="./images/img1.jpg" alt="batiment">
                     </div>
                     <div class="main-content__text">
                         <h3>Improvement Through Meaningful Innovation</h3>
@@ -62,7 +71,7 @@
                         </p>
                     </div>
                     <div>
-                        <img src="./images/img2.jpg" alt="">
+                        <img src="./images/img2.jpg" alt="interieur batiment">
                     </div>
                 </div>
             </div>
@@ -156,9 +165,26 @@
             </div>
         </div>
         <div class="video">
-            <iframe width="1904" height="832" src="https://www.youtube.com/embed/qNHUQy4zXUI" title="Carbon Fighters l&#39;intégral - Episodes 1 et 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/qNHUQy4zXUI"
+                title="Carbon Fighters l&#39;intégral - Episodes 1 et 2"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
         </div>
     </main>
+
+    <div id="scrollTop" onclick='window.scroll({top: 0, behavior: "smooth"});'>
+        >
+    </div>
+
+    <script>
+        function scrollToElement(elementId) {
+            const element = document.getElementById(elementId);
+
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Quicksand:wght@500&family=Rubik:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Quicksand:wght@500&family=Rubik:wght@600;700&display=swap');
 
 $primary-color: #18302B;
 
@@ -16,6 +16,10 @@ $primary-color: #18302B;
 #mouse {
     display: flex;
     justify-content: center;
+}
+
+#mouse svg{
+    cursor: pointer;
 }
 
 h1 {
@@ -36,11 +40,11 @@ h2 {
 }
 
 h3 {
-    @include font-style('Rubik', 40px, 600);
+    @include font-style('Rubik', 40px, 700);
 }
 
 p {
-    @include font-style('Quicksand', 20px, normal);
+    @include font-style('Quicksand', 20px, 500);
 }
 
 li {
@@ -89,7 +93,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .main-content img {
@@ -123,7 +127,7 @@ header {
 .industries ul {
     display: flex;
     justify-content: space-around;
-    padding-bottom: 75px;
+    padding-bottom: 90px;
 }
 
 .industries ul li {
@@ -134,7 +138,7 @@ header {
 }
 
 .industries ul li p {
-    margin-top: 25px;
+    margin-top: 42px;
     color: white;
     text-align: center;
 }
@@ -201,5 +205,21 @@ header {
     .industries ul li {
         margin-top: 25px;
     }
+}
 
+#scrollTop {
+    @include font-style('Rubik', 20px, 700);
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba($color: #000000, $alpha: 0.60);
+    color: white;
+    transform: rotate(-90deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 100%;
 }
