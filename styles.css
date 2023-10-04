@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Quicksand:wght@500&family=Rubik:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Quicksand:wght@500;700&family=Rubik:wght@600;700&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -9,21 +9,12 @@
   display: flex;
   justify-content: center;
 }
-
 #mouse svg {
   cursor: pointer;
 }
 
-h1 {
-  width: 60%;
-  color: white;
-  font-family: "Playfair Display";
-  font-size: 80px;
-  font-weight: 800;
-}
-
 @media screen and (max-width: 1090px) {
-  h1 {
+  header h1 {
     font-size: 60px;
   }
 }
@@ -50,11 +41,62 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+nav {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #18302B;
+}
+nav h1 {
+  margin-left: 50px;
+  color: #DFCAA4;
+}
+nav div {
+  width: 50%;
+  display: flex;
+}
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+nav li a {
+  color: white;
+  text-align: center;
+  font-family: "Quicksand";
+  font-size: 16px;
+  font-weight: 400;
+}
+nav a.active {
+  font-weight: 700;
+}
+nav a.active:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 5px;
+  background-color: #DFCAA4;
+}
+
 header {
   background: url(./images/header.jpg) no-repeat right;
   background-size: cover;
   min-height: 688px;
   padding-top: 91px;
+}
+header h1 {
+  width: 60%;
+  color: white;
+  font-family: "Playfair Display";
+  font-size: 80px;
+  font-weight: 800;
 }
 
 #header-content {
@@ -71,7 +113,6 @@ header {
   margin-top: 40px;
   font-weight: 700;
 }
-
 .header-content__btn a {
   display: flex;
   text-decoration: none;
@@ -94,20 +135,16 @@ header {
   align-items: center;
   margin-top: 60px;
 }
-
 .main-content img {
   width: 90%;
   transition: 0.5s;
 }
-
 .main-content img:hover {
   transform: scale(1.05);
 }
-
 .main-content div {
   width: 45%;
 }
-
 .main-content p {
   margin-top: 40px;
 }
@@ -116,38 +153,36 @@ header {
   margin-top: 150px;
   background-color: #18302B;
 }
-
 .industries h2 {
   padding: 75px 0;
   text-align: center;
   color: white;
 }
-
 .industries ul {
   display: flex;
   justify-content: space-around;
   padding-bottom: 90px;
 }
-
 .industries ul li {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
-
 .industries ul li p {
   margin-top: 42px;
   color: white;
   text-align: center;
 }
-
 .industries ul li svg {
   width: 110px;
   height: 110px;
   border-radius: 100%;
   padding: 30px;
   background-color: white;
+}
+.industries ul li svg:hover {
+  animation: 4s linear 0s infinite rotate;
 }
 
 @keyframes rotate {
@@ -158,15 +193,10 @@ header {
     transform: rotate(1turn);
   }
 }
-.industries ul li svg:hover {
-  animation: 4s linear 0s infinite rotate;
-}
-
 .video {
   margin: 100px auto;
   width: 75%;
 }
-
 .video iframe {
   width: 100%;
   border-radius: 10px;
@@ -174,7 +204,7 @@ header {
 }
 
 @media screen and (max-width: 986px) {
-  h1 {
+  header h1 {
     font-size: 50px;
   }
   .main-content {

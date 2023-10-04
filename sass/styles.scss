@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Quicksand:wght@500&family=Rubik:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Quicksand:wght@500;700&family=Rubik:wght@600;700&display=swap');
 
 $primary-color: #18302B;
+$secondary-color: #DFCAA4;
 
 @mixin font-style($font-family, $font-size, $font-weight) {
     font-family: $font-family;
     font-size: $font-size;
     font-weight: $font-weight;
 }
+
 * {
     padding: 0;
     margin: 0;
@@ -16,20 +18,14 @@ $primary-color: #18302B;
 #mouse {
     display: flex;
     justify-content: center;
-}
 
-#mouse svg{
-    cursor: pointer;
-}
-
-h1 {
-    width: 60%;
-    color: white;
-    @include font-style('Playfair Display', 80px, 800)
+    svg {
+        cursor: pointer;
+    }
 }
 
 @media screen and (max-width: 1090px) {
-    h1 {
+    header h1 {
         font-size: 60px;
     }
 }
@@ -51,11 +47,66 @@ li {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
+nav {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-color;
+
+    h1 {
+        margin-left: 50px;
+        color: $secondary-color;
+    }
+
+    div {
+        width: 50%;
+        display: flex;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    li a {
+        color: white;
+        text-align: center;
+        @include font-style('Quicksand', 16px, 400);
+    }
+
+    a.active {
+        font-weight: 700;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            margin-top: 5px;
+            background-color: $secondary-color;
+        }
+    }
+
+}
+
 header {
     background: url(./images/header.jpg) no-repeat right;
     background-size: cover;
     min-height: 688px;
     padding-top: 91px;
+
+    h1 {
+        width: 60%;
+        color: white;
+        @include font-style('Playfair Display', 80px, 800)
+    }
 }
 
 #header-content {
@@ -71,16 +122,16 @@ header {
     display: flex;
     margin-top: 40px;
     font-weight: 700;
-}
 
-.header-content__btn a {
-    display: flex;
-    text-decoration: none;
-    color: black;
-    font-family: 'Quicksand', sans-serif;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+    a {
+        display: flex;
+        text-decoration: none;
+        color: black;
+        font-family: 'Quicksand', sans-serif;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .main {
@@ -94,61 +145,65 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-top: 60px;
-}
 
-.main-content img {
-    width: 90%;
-    transition: 0.5s;
-}
+    img {
+        width: 90%;
+        transition: 0.5s;
+    }
 
-.main-content img:hover {
-    transform: scale(1.05);
-}
+    img:hover {
+        transform: scale(1.05);
+    }
 
-.main-content div {
-    width: 45%;
-}
+    div {
+        width: 45%;
+    }
 
-.main-content p {
-    margin-top: 40px;
+    p {
+        margin-top: 40px;
+    }
 }
 
 .industries {
     margin-top: 150px;
     background-color: $primary-color;
-}
 
-.industries h2 {
-    padding: 75px 0;
-    text-align: center;
-    color: white;
-}
+    h2 {
+        padding: 75px 0;
+        text-align: center;
+        color: white;
+    }
 
-.industries ul {
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 90px;
-}
+    ul {
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 90px;
 
-.industries ul li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
 
-.industries ul li p {
-    margin-top: 42px;
-    color: white;
-    text-align: center;
-}
+            p {
+                margin-top: 42px;
+                color: white;
+                text-align: center;
+            }
 
-.industries ul li svg {
-    width: 110px;
-    height: 110px;
-    border-radius: 100%;
-    padding: 30px;
-    background-color: white;
+            svg {
+                width: 110px;
+                height: 110px;
+                border-radius: 100%;
+                padding: 30px;
+                background-color: white;
+
+                &:hover {
+                    animation: 4s linear 0s infinite rotate;
+                }
+            }
+        }
+    }
 }
 
 @keyframes rotate {
@@ -161,23 +216,19 @@ header {
     }
 }
 
-.industries ul li svg:hover {
-    animation: 4s linear 0s infinite rotate;
-}
-
 .video {
     margin: 100px auto;
     width: 75%;
-}
 
-.video iframe {
-    width: 100%;
-    border-radius: 10px;
-    height: 60vh;
+    iframe {
+        width: 100%;
+        border-radius: 10px;
+        height: 60vh;
+    }
 }
 
 @media screen and (max-width: 986px) {
-    h1 {
+    header h1 {
         font-size: 50px;
     }
 
@@ -186,25 +237,26 @@ header {
         display: flex;
         flex-direction: column;
         gap: 100px;
-    }
 
-    .main-content div {
-        width: 95%;
-        margin: 0 auto;
-    }
+        div {
+            width: 95%;
+            margin: 0 auto;
+        }
 
-    .main-content img {
-        width: 100%;
+        img {
+            width: 100%;
+        }
     }
 
     .industries ul {
         display: block;
         justify-content: initial;
+
+        li {
+            margin-top: 25px;
+        }
     }
 
-    .industries ul li {
-        margin-top: 25px;
-    }
 }
 
 #scrollTop {
