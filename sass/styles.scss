@@ -43,8 +43,49 @@ p {
     @include font-style('Quicksand', 20px, 500);
 }
 
+@mixin cross($rt-value) {
+    content: '>';
+    margin-left: 8px;
+    transform: rotate($rt-value);
+    display: inline-block;
+}
+
 li {
     list-style: none;
+
+    a::after {
+        transition: 0.5s;
+    }
+
+    #services {
+        &:after {
+            @include cross(-90deg);
+        }
+
+        &:hover::after {
+            @include cross(90deg);
+        }
+    }
+
+    #industries {
+        &:after {
+            @include cross(-90deg)
+        }
+
+        &:hover::after {
+            @include cross(90deg);
+        }
+    }
+
+    #compagny {
+        &:after {
+            @include cross(90deg)
+        }
+
+        &:hover::after {
+            @include cross(-90deg);
+        }
+    }
 }
 
 a {
