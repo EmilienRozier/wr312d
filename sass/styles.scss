@@ -397,7 +397,7 @@ header {
             transition: 0.3s;
 
             &:hover {
-                background: #a2a2a2;
+                background: darken(#B6B6B6, 10%);
             }
         }
     }
@@ -485,5 +485,23 @@ footer {
     h2 {
         color: $secondary-color;
     }
+}
 
+#scss {
+    display: flex;
+    margin: 25px 0;
+    justify-content: center;
+
+    a {
+        @include font-style('Quicksand', 14px, 400);
+        display: block;
+        width: max-content;
+        padding: 20px;
+        background-color: $secondary-color;
+        border-radius: 30px;
+
+        &:hover {
+            background: darken($secondary-color, 20%);
+        }
+    }
 }
