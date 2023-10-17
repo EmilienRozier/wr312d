@@ -444,6 +444,7 @@ header {
 
 .contact {
     background: $third-color;
+
     .contact-content {
         display: flex;
         justify-content: center;
@@ -453,6 +454,7 @@ header {
 
         div {
             margin-left: 72px;
+
             a {
                 padding: 16px;
                 background: $primary-color;
@@ -461,4 +463,27 @@ header {
             }
         }
     }
+}
+
+footer {
+    width: 100%;
+    background-color: $primary-color;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 73px;
+    padding-bottom: 50px;
+
+    li {
+        margin-top: 16px;
+    }
+
+    a {
+        color: #FFF;
+        @include font-style('Quicksand', 14px, 400);
+    }
+
+    h2 {
+        color: $secondary-color;
+    }
+
 }
